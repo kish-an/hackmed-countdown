@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackMed Countdown</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏰</text></svg>">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="index.js" async></script>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +17,9 @@
         <h1>Title</h1>
         <img src="https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_photos/000/955/903/datas/full_width.png" alt="HackMed Logo">
         <h2>Subtitle</h2>
-        <p>Description Carousel</p>
+        <div class="main-carousel">
+            <div class="carousel-cell">Description 1</div>
+        </div>
     </main>
     <footer>
         <ul>
@@ -28,8 +33,7 @@
                 <a href="http://hackmed.uk/"><img src="icons/world-wide-web.png" alt="Website"></a>
             </li>
             <li>
-                <a href="mailto:medtechsoc@sheffield.ac.uk
-"><img src="icons/envelope.png" alt="Email"></a>
+                <a href="mailto:medtechsoc@sheffield.ac.uk"><img src="icons/envelope.png" alt="Email"></a>
             </li>
         </ul>
     </footer>
