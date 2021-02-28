@@ -26,7 +26,7 @@ main img {
   margin: 0.5rem;
 }
 main h1 {
-  font-size: 10rem;
+  font-size: 8.5rem;
   margin: 3rem auto;
   grid-area: countdown;
   font-family: "Space Mono", monospace;
@@ -34,6 +34,7 @@ main h1 {
 main h2 {
   grid-area: tagline;
   font-size: 2.2rem;
+  margin-bottom: 0;
 }
 
 .main-carousel {
