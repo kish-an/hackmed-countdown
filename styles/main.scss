@@ -1,0 +1,65 @@
+@use 'backgrounds';
+
+$primary-colour: #219ce8;
+$secondary-colour: #c3e1f7;
+
+
+body {
+    background-image: backgrounds.$shapes;
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 55px;
+    font-family: 'Hind', Courier, monospace;
+    margin: 0;
+    position: relative;
+}
+
+h1 {
+    font-size: 8rem;
+    font-family: monospace;
+}
+
+main {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(auto, 3);
+    grid-template-areas:
+                        "tagline"
+                        "countdown"
+                        "carousel"
+    ;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 150px;
+        margin: 0.5rem;
+    }
+
+    h1 {
+        grid-area: countdown;
+    }
+}
+
+footer {
+    background-color: $primary-colour;
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li {
+            margin: 0 1rem;
+        }
+    }
+}
