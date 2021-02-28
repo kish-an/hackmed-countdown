@@ -2,14 +2,14 @@
 
 $primary-colour: #219ce8;
 $secondary-colour: #c3e1f7;
-
+$footer-height: 50px;
 
 body {
     background-image: backgrounds.$shapes;
     background-size: cover;
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 55px;
+    grid-template-rows: auto $footer-height;
     font-family: 'Hind', Courier, monospace;
     margin: 0;
     position: relative;
@@ -54,12 +54,24 @@ footer {
     ul {
         list-style: none;
         padding: 0;
+        margin: 0;
+        height: $footer-height;
         display: flex;
         justify-content: center;
         align-items: center;
 
         li {
-            margin: 0 1rem;
+            margin: 0 5rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            height: 40px;
+            display: inline-block;
         }
     }
 }

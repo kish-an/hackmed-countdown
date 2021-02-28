@@ -3,7 +3,7 @@ body {
   background-size: cover;
   height: 100vh;
   display: grid;
-  grid-template-rows: auto 55px;
+  grid-template-rows: auto 50px;
   font-family: "Hind", Courier, monospace;
   margin: 0;
   position: relative;
@@ -42,12 +42,22 @@ footer {
 footer ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 footer ul li {
-  margin: 0 1rem;
+  margin: 0 5rem;
+}
+footer ul a {
+  display: flex;
+  align-items: center;
+}
+footer ul img {
+  height: 40px;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=main.css.map */
