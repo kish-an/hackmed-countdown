@@ -36,6 +36,12 @@ main h2 {
   font-size: 2.2rem;
   margin-bottom: 0;
 }
+main h2 span {
+  display: inline-block;
+}
+main h2:hover .rocket {
+  animation: fly ease-in 3s infinite;
+}
 
 .main-carousel {
   justify-self: center;
@@ -81,6 +87,20 @@ footer ul img {
 }
 footer ul img:hover {
   transform: scale(1.2);
+}
+
+@keyframes fly {
+  0% {
+    transform: translate3d(0px, 0px, 0);
+    opacity: 100%;
+  }
+  80% {
+    opacity: 50%;
+  }
+  100% {
+    transform: translate3d(200px, -200px, 0);
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
