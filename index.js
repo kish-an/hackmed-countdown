@@ -1,6 +1,6 @@
 const HOUR_IN_MILLISECONDS = 3600000;
-const countdownStart = new Date('April 24, 2021 11:30:00').getTime();
-const countdownEnd = new Date('April 25, 2021 11:30:00').getTime();
+const countdownStart = new Date('April 24, 2021 10:00:00').getTime();
+const countdownEnd = new Date('April 25, 2021 14:00:00').getTime();
 const countdownElem = document.getElementById('countdown');
 
 // 'solution' to run function once within setInterval
@@ -57,8 +57,8 @@ let ticker = setInterval(() => {
 
     // Hackathon has started
     document.dispatchEvent(countdownBegin);
-    let [, hours, mins, secs] = timeRemaining(countdownTimer);
-    countdownElem.innerHTML = `${formatTime(hours)}h:${formatTime(mins)}m:${formatTime(secs)}s`;
+    let [days, hours, mins, secs] = timeRemaining(countdownTimer);
+    countdownElem.innerHTML = `${days === 0 ? '' : `${formatTime(days)}d:`}${formatTime(hours)}h:${formatTime(mins)}m:${formatTime(secs)}s`;
 
     // Hackathon is about to end
     if (countdownTimer === HOUR_IN_MILLISECONDS) {
