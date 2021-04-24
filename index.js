@@ -106,12 +106,87 @@ const workshop4 = new Event('workshop4');
 document.addEventListener('workshop4', () => {
     titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
     countdownElem.style.fontSize = '10rem';
-    console.log('hello');
     flkty.remove(flkty.getCellElements());
     const cells = [
         createCell(`Join the discord to keep an eye on annoucements 👀`),
         createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
         createCell('Need a break? Come join us for some Pictionary at 19:00pm 🎨')
+    ];
+    flkty.append(cells);
+}, { once: true });
+
+const halfway = new Event('halfway');
+document.addEventListener('halfway', () => {
+    titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
+    countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell(`Use /schedule on discord to see the events schedule 📆`),
+        createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
+        createCell('Make sure to take a break and get some rest! 😴')
+    ];
+    flkty.append(cells);
+}, { once: true });
+
+const workshop5 = new Event('workshop5');
+document.addEventListener('workshop5', () => {
+    titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
+    countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell(`Use /schedule on discord to see the events schedule 📆`),
+        createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
+        createCell('Morning activity begins at 09:00am, early bird catches the worm! 🌞')
+    ];
+    flkty.append(cells);
+}, { once: true });
+
+const workshop6 = new Event('workshop6');
+document.addEventListener('workshop6', () => {
+    titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
+    countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
+        createCell('Start working on your devpost submission, don\'t leave it till too late!'),
+        createCell('Pitching workshop begins at 11:30am! 🧳')
+    ];
+    flkty.append(cells);
+}, { once: true });
+
+const twoHoursLeft = new Event('twoHoursLeft');
+document.addEventListener('twoHoursLeft', () => {
+    titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
+    countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
+        createCell('Devpost info')
+    ];
+    flkty.append(cells);
+}, { once: true });
+
+const oneHourLeft = new Event('oneHourLeft');
+document.addEventListener('oneHourLeft', () => {
+    titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
+    countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
+        createCell('Devpost info #2')
+    ];
+    flkty.append(cells);
+}, { once: true });
+
+const countdownOver = new Event('countdownOver');
+document.addEventListener('countdownOver', () => {
+    titleElem.innerHTML = '<h2><span class="party">🎉</span> Stop hacking!</h2>';
+    countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell('We hope you enjoyed HackMed 2021 🧬'),
+        createCell('Demo info'),
+        createCell('Demo info 2')
     ];
     flkty.append(cells);
 }, { once: true });
@@ -122,7 +197,6 @@ let ticker = setInterval(() => {
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
-    console.log(countdownTimer);
 
     // Countdown to hackathon start date
     if (timeToStart > 0) {
@@ -138,15 +212,28 @@ let ticker = setInterval(() => {
 
      // Hackathon has ended
     if (countdownTimer <= 0) {
+        document.dispatchEvent(countdownOver);
         clearInterval(ticker);
     }
     // 1 hour left
     else if (countdownTimer <= 3600000) {
-
+        document.dispatchEvent(oneHourLeft);
     }
      // 2 hours left
     else if (countdownTimer <= 7200000) {
-
+        document.dispatchEvent(twoHoursLeft);
+    }
+    // 3.5 hours left (workshop 6)
+    else if (countdownTimer <= 12600000) {
+        document.dispatchEvent(workshop6);
+    }
+    // 6 hours left (morning activity)
+    else if (countdownTimer <= 21600000) {
+        document.dispatchEvent(workshop5);
+    }
+    // Half way
+    else if (countdownTimer <= 50400000) {
+        document.dispatchEvent(halfWay);
     }
     // 20 hours left (evening activity)
     else if (countdownTimer <= 72000000) {
@@ -172,5 +259,4 @@ let ticker = setInterval(() => {
     else if (countdownTimer <= 100800000) {
         document.dispatchEvent(countdownBegin);
     }
-
 }, 1000);
