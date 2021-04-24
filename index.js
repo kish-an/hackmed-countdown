@@ -80,6 +80,13 @@ const dayLeft = new Event('dayLeft');
 document.addEventListener('dayLeft', () => {
     titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
     countdownElem.style.fontSize = '10rem';
+    flkty.remove(flkty.getCellElements());
+    const cells = [
+        createCell(`Join the discord to keep an eye on annoucements 👀`),
+        createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♀️'),
+        createCell('Add songs to the HackMed spotify playlist! 🎵')
+    ];
+    flkty.append(cells);
 }, { once: true });
 
 const workshop3 = new Event('workshop3');
