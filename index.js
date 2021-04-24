@@ -118,7 +118,7 @@ document.addEventListener('workshop4', () => {
 
 // Update page every second
 let ticker = setInterval(() => {
-    let now = new Date('April 24, 2021 18:15:00').getTime();
+    let now = new Date().getTime();
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
@@ -139,6 +139,14 @@ let ticker = setInterval(() => {
      // Hackathon has ended
     if (countdownTimer <= 0) {
         clearInterval(ticker);
+    }
+    // 1 hour left
+    else if (countdownTimer <= 3600000) {
+
+    }
+    //
+    else if (countdownTimer <= ) {
+
     }
      // 2 hours left
     else if (countdownTimer <= 7200000) {
