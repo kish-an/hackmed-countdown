@@ -110,7 +110,7 @@ document.addEventListener('workshop4', () => {
 
 // Update page every second
 let ticker = setInterval(() => {
-    let now = new Date('April 24, 2021 15:00:00').getTime();
+    let now = new Date().getTime();
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
