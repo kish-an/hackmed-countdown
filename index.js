@@ -144,10 +144,6 @@ let ticker = setInterval(() => {
     else if (countdownTimer <= 3600000) {
 
     }
-    //
-    else if (countdownTimer <= ) {
-
-    }
      // 2 hours left
     else if (countdownTimer <= 7200000) {
 
