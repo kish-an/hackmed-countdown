@@ -106,6 +106,7 @@ const workshop4 = new Event('workshop4');
 document.addEventListener('workshop4', () => {
     titleElem.innerHTML = '<h2><span class="siren">🚨</span> Hacking ends in... </h2>';
     countdownElem.style.fontSize = '10rem';
+    console.log('hello');
     flkty.remove(flkty.getCellElements());
     const cells = [
         createCell(`Join the discord to keep an eye on annoucements 👀`),
@@ -117,10 +118,11 @@ document.addEventListener('workshop4', () => {
 
 // Update page every second
 let ticker = setInterval(() => {
-    let now = new Date().getTime();
+    let now = new Date('April 24, 2021 18:15:00').getTime();
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
+    console.log(countdownTimer);
 
     // Countdown to hackathon start date
     if (timeToStart > 0) {
@@ -142,23 +144,27 @@ let ticker = setInterval(() => {
     else if (countdownTimer <= 7200000) {
 
     }
-    else if (countdownTimer <= 68400000) {
+    // 20 hours left (evening activity)
+    else if (countdownTimer <= 72000000) {
        document.dispatchEvent(workshop4);
     }
+    // 23 hours left (workshop 3)
     else if (countdownTimer <= 82800000) {
         document.dispatchEvent(workshop3);
     }
-    // 23h:59m:59s left
+    // 23h:59m:59s left (1 day left)
     else if (countdownTimer <= (DAY_IN_MILLISECONDS - 1000)) {
         document.dispatchEvent(dayLeft);
     }
+    // 26 hours left (workshop 2)
     else if (countdownTimer <= 93600000) {
         document.dispatchEvent(workshop2)
     }
-    // Carousel messages for workshops
+    // 27.5 hours left (workshop 1)
     else if (countdownTimer <= 99000000) {
         document.dispatchEvent(workshop1);
     }
+    // 28 hours left (Hackathon started)
     else if (countdownTimer <= 100800000) {
         document.dispatchEvent(countdownBegin);
     }
