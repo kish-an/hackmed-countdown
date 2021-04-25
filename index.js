@@ -161,7 +161,8 @@ document.addEventListener('twoHoursLeft', () => {
     flkty.remove(flkty.getCellElements());
     const cells = [
         createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
-        createCell('Devpost info')
+        createCell('Less than 2 hours to go!'),
+        createCell('Want to win a prize? Enter your project on devpost! 🏆')
     ];
     flkty.append(cells);
 }, { once: true });
@@ -173,20 +174,22 @@ document.addEventListener('oneHourLeft', () => {
     flkty.remove(flkty.getCellElements());
     const cells = [
         createCell('Use the #mentor-help channel on discord if you need any help! 🙋‍♂️'),
-        createCell('Devpost info #2')
+        createCell('Less than 1 hour to go! ⏰'),
+        createCell('Make sure you\'ve submitted your project on devpost! 🏆')
     ];
     flkty.append(cells);
 }, { once: true });
 
 const countdownOver = new Event('countdownOver');
 document.addEventListener('countdownOver', () => {
-    titleElem.innerHTML = '<h2><span class="party">🎉</span> Stop hacking!</h2>';
-    countdownElem.style.fontSize = '10rem';
+    titleElem.innerHTML = '<h2>We can\'t wait to see what you\'ve built</h2>';
+    countdownElem.innerText = '🎉 Stop hacking!';
+    countdownElem.style.fontSize = '8rem';
     flkty.remove(flkty.getCellElements());
     const cells = [
-        createCell('We hope you enjoyed HackMed 2021 🧬'),
-        createCell('Demo info'),
-        createCell('Demo info 2')
+        createCell('We hope you enjoyed HackMed 2021! 🧬'),
+        createCell('Demos will take place at 15:00pm on discord.'),
+        createCell('You can prepare slides for your demo! 💬')
     ];
     flkty.append(cells);
 }, { once: true });
