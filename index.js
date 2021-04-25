@@ -193,10 +193,11 @@ document.addEventListener('countdownOver', () => {
 
 // Update page every second
 let ticker = setInterval(() => {
-    let now = new Date().getTime();
+    let now = new Date('April 25, 2021 01:00:00').getTime();
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
+    console.log(countdownTimer);
 
     // Countdown to hackathon start date
     if (timeToStart > 0) {
@@ -233,7 +234,7 @@ let ticker = setInterval(() => {
     }
     // Half way
     else if (countdownTimer <= 50400000) {
-        document.dispatchEvent(halfWay);
+        document.dispatchEvent(halfway);
     }
     // 20 hours left (evening activity)
     else if (countdownTimer <= 72000000) {
