@@ -1,5 +1,5 @@
-const countdownStart = new Date('April 24, 2021 10:00:00').getTime();
-const countdownEnd = new Date('April 25, 2021 14:00:00').getTime();
+const countdownStart = new Date('April 24, 2021 10:00:00 UTC+1').getTime();
+const countdownEnd = new Date('April 25, 2021 14:00:00 UTC+1').getTime();
 const countdownElem = document.getElementById('countdown');
 const titleElem = document.querySelector('h2');
 const carouselElem = document.querySelector('.main-carousel');
@@ -197,7 +197,6 @@ let ticker = setInterval(() => {
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
-    console.log(countdownTimer);
 
     // Countdown to hackathon start date
     if (timeToStart > 0) {
