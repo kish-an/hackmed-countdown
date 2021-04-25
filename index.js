@@ -193,7 +193,7 @@ document.addEventListener('countdownOver', () => {
 
 // Update page every second
 let ticker = setInterval(() => {
-    let now = new Date('April 25, 2021 01:00:00').getTime();
+    let now = new Date().getTime();
 
     let timeToStart = countdownStart - now;
     let countdownTimer = countdownEnd - now;
